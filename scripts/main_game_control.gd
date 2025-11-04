@@ -69,7 +69,7 @@ func _process(_time):
 		
 		Globals.shooting = true
 		Globals.canShoot = false
-		# test
+		
 	#updating on screen labels
 	score_label.text = "Score: " + str(Globals.score)
 	timer_label.text = str(int(round(overall_timer.time_left)))
