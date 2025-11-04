@@ -8,7 +8,6 @@ func _ready():
 	score_label.text = "Score: " + str(Globals.score)
 
 
-# reset game on end of game
 
 func _on_button_pressed() -> void:
 	Globals.reset()
