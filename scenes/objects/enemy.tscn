@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjg11et2mdoda"]
+
+[ext_resource type="Texture2D" uid="uid://dd2a3u0lhvmi5" path="res://icon.svg" id="1_ja0ge"]
+[ext_resource type="Script" uid="uid://dn2oymd7sclxd" path="res://scripts/large_enemy_hitbox.gd" id="2_lp353"]
+[ext_resource type="AudioStream" uid="uid://bedi7tydni3g7" path="res://audio/sfx/targetHit.mp3" id="3_gwbwg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ja0ge"]
+size = Vector2(128, 128)
+
+[node name="Enemy" type="Node2D"]
+
+[node name="LargeEnemyHitbox" type="Area2D" parent="."]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("2_lp353")
+
+[node name="TargetHitSFX" type="AudioStreamPlayer" parent="LargeEnemyHitbox"]
+stream = ExtResource("3_gwbwg")
+volume_db = -14.342
+pitch_scale = 1.59
+
+[node name="Icon" type="Sprite2D" parent="LargeEnemyHitbox"]
+texture = ExtResource("1_ja0ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LargeEnemyHitbox"]
+shape = SubResource("RectangleShape2D_ja0ge")
+debug_color = Color(0.6067997, 0.41553488, 0.8874666, 0.41960785)
+
+[connection signal="mouse_entered" from="LargeEnemyHitbox" to="LargeEnemyHitbox" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="LargeEnemyHitbox" to="LargeEnemyHitbox" method="_on_mouse_exited"]

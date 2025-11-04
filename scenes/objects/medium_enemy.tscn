@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://ose37enrf32h"]
+
+[ext_resource type="Texture2D" uid="uid://dd2a3u0lhvmi5" path="res://icon.svg" id="1_f22sr"]
+[ext_resource type="Script" uid="uid://c2tkamgcoeic4" path="res://scripts/medium_enemy_hitbox.gd" id="2_sgvia"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f22sr"]
+size = Vector2(128.00002, 128.00002)
+
+[node name="MediumEnemy" type="Node2D"]
+
+[node name="MediumEnemyHitbox" type="Area2D" parent="."]
+position = Vector2(-2.7105054e-20, -2.7105054e-20)
+scale = Vector2(0.37499997, 0.37499997)
+script = ExtResource("2_sgvia")
+
+[node name="Icon" type="Sprite2D" parent="MediumEnemyHitbox"]
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("1_f22sr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MediumEnemyHitbox"]
+position = Vector2(7.629394e-06, 7.629394e-06)
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_f22sr")
+debug_color = Color(0.81299466, 0.3612035, 0.5223002, 0.41960785)
+
+[connection signal="mouse_entered" from="MediumEnemyHitbox" to="MediumEnemyHitbox" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MediumEnemyHitbox" to="MediumEnemyHitbox" method="_on_mouse_exited"]

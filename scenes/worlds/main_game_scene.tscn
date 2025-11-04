@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://dh0s4wxpw43wx"]
+
+[ext_resource type="Texture2D" uid="uid://dd2a3u0lhvmi5" path="res://icon.svg" id="1_e1ei7"]
+[ext_resource type="Script" uid="uid://daoncqqhk3f5g" path="res://scripts/main_game_control.gd" id="1_ltt4m"]
+[ext_resource type="AudioStream" uid="uid://cpcsqf4ndetr3" path="res://audio/sfx/shot.mp3" id="3_dq5l5"]
+[ext_resource type="AudioStream" uid="uid://dkpnhqjetfj3h" path="res://audio/sfx/reload.mp3" id="4_faocy"]
+
+[node name="MainGameScene" type="Node2D"]
+script = ExtResource("1_ltt4m")
+
+[node name="BackgroundArt" type="Node" parent="."]
+
+[node name="PlayerIconSprite" type="Sprite2D" parent="."]
+position = Vector2(576, 580)
+scale = Vector2(1, 1.0625)
+texture = ExtResource("1_e1ei7")
+
+[node name="SpawningTimer" type="Timer" parent="."]
+wait_time = 1.2999999999999998
+
+[node name="OverallGameTimer" type="Timer" parent="."]
+wait_time = 20.0
+
+[node name="GunshotSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_dq5l5")
+volume_db = -16.0
+pitch_scale = 1.68
+
+[node name="ReloadSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_faocy")
+volume_db = -17.5
+pitch_scale = 1.4
+
+[node name="ShootTimer" type="Timer" parent="."]
+
+[node name="Score" type="Label" parent="."]
+offset_right = 192.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 32
+text = "Score: "
+
+[node name="Timer" type="Label" parent="."]
+offset_top = 64.0
+offset_right = 192.0
+offset_bottom = 127.0
+theme_override_font_sizes/font_size = 32
+
+[node name="ShootText" type="Label" parent="."]
+offset_left = 480.0
+offset_right = 672.0
+offset_bottom = 136.0
+theme_override_font_sizes/font_size = 38
+text = "Shoot!"
+horizontal_alignment = 1
+
+[connection signal="timeout" from="SpawningTimer" to="." method="_on_spawntimer_timeout"]
+[connection signal="timeout" from="OverallGameTimer" to="." method="_on_overalltimer_timeout"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoottimer_timeout"]
