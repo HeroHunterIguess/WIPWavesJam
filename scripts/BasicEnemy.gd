@@ -1,5 +1,7 @@
 extends Node2D
 
+var health = 2
+
 # enemy will travel towards the player location
 func moveToPlayer():
 	var speed = 0.5

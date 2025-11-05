@@ -12,8 +12,7 @@ func _ready():
 	spawnEnemyAtCoords(100,100)
 	spawnEnemyAtCoords(500,500)
 	spawnEnemyAtCoords(350,200)
-	
-	
+
 
 # spawn enemy at inputted coordinates
 func spawnEnemyAtCoords(x,y):
@@ -22,7 +21,7 @@ func spawnEnemyAtCoords(x,y):
 	BasicEnemy.global_position = Vector2(x,y)
 
 # spawn a bullet and make it go towards the mouse
-func spawnBulletWithDirection(mx,my):
+func spawnBullet():
 	print("spawnikng bullet")
 	
 	# spawning bullet at player location
@@ -30,21 +29,14 @@ func spawnBulletWithDirection(mx,my):
 	add_child(BasicBullet)
 	BasicBullet.global_position = Vector2(580,580)
 	
-	var speed = 2
-	# calculate distance to player location
-	var distancex = mx - BasicBullet.global_position.x
-	var distancey = my - BasicBullet.global_position.y
-	var distance = sqrt(pow(distancex, 2) + pow(distancey, 2))
-	
-	if distance > 0:
-		# increase x and y to get to location
-		BasicBullet.global_position.x += (distancex / distance) * speed
-		BasicBullet.global_position.y += (distancey / distance) * speed
-
-
+	# get direction and set velocity to go there
+	var dir = (get_global_mouse_position() - BasicBullet.global_position).normalized()
+	BasicBullet.velocity = dir * BasicBullet.speed
 
 # runs every frame
 func _process(_time):
 	mousePos = get_viewport().get_mouse_position()
+	
+	#keybind for abilities
 	if Input.is_action_just_pressed("ability1"):
-		spawnBulletWithDirection(mousePos.x,mousePos.y)
+		spawnBullet()

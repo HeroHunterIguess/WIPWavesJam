@@ -31,14 +31,6 @@ offset_bottom = 127.0
 theme_override_font_sizes/font_size = 32
 text = "[Timer]"
 
-[node name="ShootText" type="Label" parent="."]
-offset_left = 480.0
-offset_right = 672.0
-offset_bottom = 64.0
-theme_override_font_sizes/font_size = 38
-text = "Shoot!"
-horizontal_alignment = 1
-
 [connection signal="timeout" from="SpawningTimer" to="." method="_on_spawntimer_timeout"]
 [connection signal="timeout" from="WaveTimer" to="." method="_on_overalltimer_timeout"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoottimer_timeout"]
