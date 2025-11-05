@@ -11,6 +11,7 @@ script = ExtResource("2_lp353")
 
 [node name="LargeEnemyHitbox" type="Area2D" parent="."]
 scale = Vector2(0.5, 0.5)
+monitorable = false
 
 [node name="Icon" type="Sprite2D" parent="LargeEnemyHitbox"]
 texture = ExtResource("1_ja0ge")

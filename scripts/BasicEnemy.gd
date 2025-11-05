@@ -17,3 +17,4 @@ func moveToPlayer():
 
 func _process(_time):
 	moveToPlayer()
+	
