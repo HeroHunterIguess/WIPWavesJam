@@ -48,4 +48,5 @@ func _process(_time):
 	moveToPlayer()
 	if health <= 0:
 		Globals.orbs += 1
+		Globals.overallScore += 1
 		queue_free()

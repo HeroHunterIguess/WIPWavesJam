@@ -5,7 +5,7 @@ extends Node2D
 # tell player their score
 
 func _ready():
-	score_label.text = "Score: " + str(Globals.score)
+	score_label.text = "Score: " + str(Globals.orbs)
 
 
 
