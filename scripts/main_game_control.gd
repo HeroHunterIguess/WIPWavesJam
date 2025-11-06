@@ -10,6 +10,8 @@ const tankEnemyPreload = preload("res://scenes/objects/enemy types/tank_enemy.ts
 var mousePos
 
 
+
+
 # create a wave of different types of enemies based on the wave number
 func advancedWaveControl(waveNum):
 	# timer between wave start and emphasize what wave is starting
@@ -18,7 +20,6 @@ func advancedWaveControl(waveNum):
 	await get_tree().create_timer(1.75).timeout
 	Globals.noWave = false
 	$waveNum.text = "Wave: " + str(Globals.currentWave)
-	
 	
 	# create a basic wave for the first one
 	if waveNum == 1:
@@ -47,10 +48,10 @@ func spawnFastEnemyWave(amountOfEnemies):
 	for i in amountOfEnemies:
 		spawnFastEnemyAtCoords(rng.randi_range(-50,1200),rng.randi_range(-70,-1000))
 
+# spawn a wave of tank enemies
 func spawnTankEnemyWave(amountOfEnemies):
 	for i in amountOfEnemies:
 		spawnTankEnemyAtCoords(rng.randi_range(-50,1200),rng.randi_range(-70,-200))
-
 
 
 
@@ -60,7 +61,6 @@ func spawnTankEnemyWave(amountOfEnemies):
 func _ready(): 
 	# initialize first wave
 	advancedWaveControl(Globals.currentWave)
-
 
 
 
@@ -77,11 +77,11 @@ func spawnFastEnemyAtCoords(x,y):
 	add_child(fastEnemy)
 	fastEnemy.global_position = Vector2(x,y)
 
+# spawn a tank enemy at coords x y
 func spawnTankEnemyAtCoords(x,y):
 	var tankEnemy = tankEnemyPreload.instantiate()
 	add_child(tankEnemy)
 	tankEnemy.global_position = Vector2(x,y)
-
 
 
 
@@ -102,17 +102,16 @@ func spawnBullet():
 
 
 
-
 # runs every frame
 func _process(_time):
+	# display info on screen
 	$Orbs.text = "Orbs: " + str(Globals.orbs)
 	if Globals.noWave == false:
 		$waveNum.text = "Wave: " + str(Globals.currentWave)
 	$Health.text = "HP: " + str(Globals.playerHealth)
 	
+	# get mouse position obv
 	mousePos = get_viewport().get_mouse_position()
-	
-	
 	
 	
 	
@@ -123,20 +122,18 @@ func _process(_time):
 	
 	
 	
-	
-	
-	
-	# send to game over if player dies
+	# send to game over screen if player dies
 	if Globals.playerHealth <= 0:
 		get_tree().change_scene_to_file("res://scenes/worlds/game_over.tscn")
 	
+	# spawn new wave if current wave ends
 	if get_tree().get_nodes_in_group("Enemy").size() == 0 && Globals.noWave == false:
 		Globals.currentWave += 1
 		advancedWaveControl(Globals.currentWave)
 
 
 
-
+# decrease player health if enemy hits player
 func _on_player_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Enemy"):
 		Globals.decreasePlayerHealth(2)
