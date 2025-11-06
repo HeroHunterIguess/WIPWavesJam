@@ -11,6 +11,9 @@ var noWave = false
 
 
 
+
+
+
 func decreasePlayerHealth(amount):
 	playerHealth -= amount
 

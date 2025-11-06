@@ -8,6 +8,8 @@ const fastEnemyPreload = preload("res://scenes/objects/enemy types/fast_enemy.ts
 const tankEnemyPreload = preload("res://scenes/objects/enemy types/tank_enemy.tscn")
 
 var mousePos
+var isPaused = false
+
 
 
 
@@ -104,6 +106,7 @@ func spawnBullet():
 
 
 
+
 # runs every frame
 func _process(_time):
 	
@@ -122,6 +125,7 @@ func _process(_time):
 	
 	
 	
+	
 	#keybind for abilities
 	if Input.is_action_just_pressed("ability3"):
 		spawnBullet()
@@ -137,6 +141,7 @@ func _process(_time):
 	if get_tree().get_nodes_in_group("Enemy").size() == 0 && Globals.noWave == false:
 		Globals.currentWave += 1
 		advancedWaveControl(Globals.currentWave)
+
 
 
 
