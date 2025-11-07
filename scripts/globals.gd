@@ -9,7 +9,8 @@ var playerLocation = Vector2(576,616)
 var playerHealth = 20
 var noWave = false
 
-
+var wideAttackCooldown = 200
+var basicBulletCooldown = 18
 
 
 

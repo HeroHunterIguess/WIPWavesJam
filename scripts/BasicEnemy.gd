@@ -20,8 +20,9 @@ func takeDamage(amount):
 	$Sprite2D.texture = normalSprite
 	$Sprite2D.scale = Vector2(0.5, 0.5) # TEMPORARY WITH THESE TEST IMAGES
 
-
-
+# take knockback from being hit by bigger attacks
+func takeKB():
+	position.y -= 25
 
 
 # enemy will travel towards the player location

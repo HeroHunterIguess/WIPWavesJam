@@ -6,9 +6,9 @@ const basicEnemyPreload = preload("res://scenes/objects/enemy types/enemy.tscn")
 const basicBulletPreload = preload("res://scenes/objects/basic_bullet.tscn")
 const fastEnemyPreload = preload("res://scenes/objects/enemy types/fast_enemy.tscn")
 const tankEnemyPreload = preload("res://scenes/objects/enemy types/tank_enemy.tscn")
+const wideAttackPreload = preload("res://scenes/objects/wide_attack.tscn")
 
 var mousePos
-
 
 
 
@@ -92,6 +92,8 @@ func spawnTankEnemyAtCoords(x,y):
 # spawn a bullet and make it go towards the mouse
 func spawnBullet():
 	
+	# reset shoot cooldown
+	Globals.basicBulletCooldown = 18
 	# spawning bullet at player location
 	var basicBullet = basicBulletPreload.instantiate()
 	add_child(basicBullet)
@@ -102,11 +104,33 @@ func spawnBullet():
 	basicBullet.velocity = dir * basicBullet.speed
 
 
+# spawns the wide push attack in mouse dir
+func spawnWideAttack():
+	
+	# spawning the wave at player location
+	var wideAttack = wideAttackPreload.instantiate()
+	add_child(wideAttack)
+	wideAttack.global_position = Vector2(576,616)
+	
+	# get direction and set velocity to go there
+	var dir = (get_global_mouse_position() - wideAttack.global_position).normalized()
+	wideAttack.velocity = dir * wideAttack.speed
+	
+	wideAttack.look_at(mousePos)
+	wideAttack.rotation_degrees += 90
+
 
 
 
 # runs every frame
-func _process(_time):
+func _process(delta):
+	
+	# attack cooldowns
+	Globals.wideAttackCooldown -= 125 * delta
+	Globals.basicBulletCooldown -= 125 * delta
+	
+	
+	
 	
 	# display info on screen
 	$Orbs.text = "Orbs: " + str(Globals.orbs)
@@ -121,12 +145,18 @@ func _process(_time):
 	
 	
 	
+	
 	if Input.is_action_just_pressed("openShop"):
 		get_tree().paused = true
 		$pauseMenuLayer.visible = true
+	
 	#keybind for abilities
-	if Input.is_action_just_pressed("ability3"):
+	if Input.is_action_just_pressed("ability3") && Globals.basicBulletCooldown <= 0:
 		spawnBullet()
+	if Input.is_action_just_pressed("ability2"):
+		if Globals.wideAttackCooldown <= 0:
+			spawnWideAttack()
+			Globals.wideAttackCooldown = 200
 	
 	
 	

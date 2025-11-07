@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddi84eeklmagj"]
+
+[ext_resource type="Script" uid="uid://d33oab0xanfcr" path="res://scripts/wide_attack.gd" id="1_bwep8"]
+[ext_resource type="Texture2D" uid="uid://dd2a3u0lhvmi5" path="res://icon.svg" id="1_kvoci"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvoci"]
+size = Vector2(144, 16)
+
+[node name="wideAttack" type="Node2D"]
+script = ExtResource("1_bwep8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3.8146973e-06, 0)
+scale = Vector2(1.1249999, 0.12499999)
+texture = ExtResource("1_kvoci")
+
+[node name="wideAttackHitbox" type="Area2D" parent="." groups=["basicBulletShot"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wideAttackHitbox"]
+shape = SubResource("RectangleShape2D_kvoci")
+
+[connection signal="area_entered" from="wideAttackHitbox" to="." method="_on_wide_attack_hitbox_area_entered"]

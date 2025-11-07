@@ -7,6 +7,9 @@ var health = 15
 func takeDamage(amount):
 	health -= amount
 
+# take knockback from being hit by bigger attacks
+func takeKB():
+	position.y -= 15
 
 
 # enemy will travel towards the player location
