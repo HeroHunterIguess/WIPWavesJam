@@ -6,9 +6,11 @@ var orbs = 0
 var overallScore = 0
 var currentWave = 1
 
+
 var playerLocation = Vector2(640,688)
 var playerHealth = 20
 var noWave = false
+
 
 var wideAttackCooldown = 200
 var basicBulletCooldown = 18

@@ -1,6 +1,6 @@
 extends Node2D
 
-var health = 15
+var health = 17
 var damage = 5
 
 
