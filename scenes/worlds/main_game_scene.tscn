@@ -46,6 +46,19 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ltt4m"]
 radius = 49.230774
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xxp0d"]
+shader = ExtResource("5_faocy")
+shader_parameter/speed = 0.3
+shader_parameter/pixelation = 3.0
+shader_parameter/zoom = 2.0
+shader_parameter/gradient_pixelation = 0.08300000394250001
+shader_parameter/background_threshold = 0.0
+shader_parameter/color_low_threshold = 0.24
+shader_parameter/color_mid_threshold = 0.48
+shader_parameter/color_low = Color(0, 0, 0, 1)
+shader_parameter/color_mid = Color(0, 0, 0, 1)
+shader_parameter/color_high = Color(0, 0, 0, 1)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ct5qv"]
 atlas = ExtResource("4_xxp0d")
 region = Rect2(0, 0, 135, 64)
@@ -68,19 +81,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xxp0d"]
-shader = ExtResource("5_faocy")
-shader_parameter/speed = 0.3
-shader_parameter/pixelation = 3.0
-shader_parameter/zoom = 2.0
-shader_parameter/gradient_pixelation = 0.08300000394250001
-shader_parameter/background_threshold = 0.0
-shader_parameter/color_low_threshold = 0.24
-shader_parameter/color_mid_threshold = 0.48
-shader_parameter/color_low = Color(0, 0, 0, 1)
-shader_parameter/color_mid = Color(0, 0, 0, 1)
-shader_parameter/color_high = Color(0, 0, 0, 1)
-
 [node name="MainGameScene" type="Node2D"]
 script = ExtResource("1_ltt4m")
 
@@ -102,7 +102,7 @@ position = Vector2(576, 616)
 scale = Vector2(1.2499995, 1.2500001)
 sprite_frames = SubResource("SpriteFrames_dq5l5")
 autoplay = "default"
-frame_progress = 0.39684796
+frame_progress = 0.80094886
 
 [node name="playerHitbox" type="Area2D" parent="." groups=["Player"]]
 position = Vector2(575.99994, 615.99994)
@@ -114,40 +114,6 @@ shape = SubResource("CircleShape2D_ltt4m")
 
 [node name="SpawningTimer" type="Timer" parent="."]
 
-[node name="Orbs" type="Label" parent="."]
-offset_left = 24.0
-offset_top = 136.0
-offset_right = 216.0
-offset_bottom = 200.0
-theme_override_font_sizes/font_size = 32
-text = "Orbs: "
-
-[node name="waveTextAnimation" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
-position = Vector2(111.99999, 64.00001)
-scale = Vector2(1.5833335, 1.875)
-sprite_frames = SubResource("SpriteFrames_c7761")
-autoplay = "default"
-frame_progress = 0.59913623
-
-[node name="waveNum" type="Label" parent="."]
-modulate = Color(0.98240346, 0.9709955, 0.9668992, 1)
-texture_filter = 1
-offset_left = 216.0
-offset_right = 360.0
-offset_bottom = 115.0
-theme_override_fonts/font = ExtResource("5_ct5qv")
-theme_override_font_sizes/font_size = 90
-text = "1"
-
-[node name="Health" type="Label" parent="."]
-offset_left = 624.0
-offset_top = 576.0
-offset_right = 776.0
-offset_bottom = 639.0
-theme_override_font_sizes/font_size = 32
-text = "HP:"
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
@@ -157,6 +123,42 @@ offset_top = -192.0
 offset_right = 1360.0
 offset_bottom = 792.0
 color = Color(0, 0, 0, 0.30588236)
+
+[node name="ui" type="CanvasLayer" parent="."]
+
+[node name="Health" type="Label" parent="ui"]
+offset_left = 624.0
+offset_top = 576.0
+offset_right = 776.0
+offset_bottom = 639.0
+theme_override_font_sizes/font_size = 32
+text = "HP:"
+
+[node name="waveNum" type="Label" parent="ui"]
+modulate = Color(0.98240346, 0.9709955, 0.9668992, 1)
+texture_filter = 1
+offset_left = 216.0
+offset_right = 360.0
+offset_bottom = 115.0
+theme_override_fonts/font = ExtResource("5_ct5qv")
+theme_override_font_sizes/font_size = 90
+text = "1"
+
+[node name="Orbs" type="Label" parent="ui"]
+offset_left = 24.0
+offset_top = 136.0
+offset_right = 216.0
+offset_bottom = 200.0
+theme_override_font_sizes/font_size = 32
+text = "Orbs: "
+
+[node name="waveTextAnimation" type="AnimatedSprite2D" parent="ui"]
+texture_filter = 1
+position = Vector2(111.99999, 64.00001)
+scale = Vector2(1.5833335, 1.875)
+sprite_frames = SubResource("SpriteFrames_c7761")
+autoplay = "default"
+frame_progress = 0.173405
 
 [node name="pauseMenuLayer" type="CanvasLayer" parent="."]
 visible = false

@@ -18,7 +18,7 @@ func advancedWaveControl(waveNum):
 	Globals.noWave = true
 	await get_tree().create_timer(1.75).timeout
 	Globals.noWave = false
-	$waveNum.text = str(Globals.currentWave)
+	$ui/waveNum.text = str(Globals.currentWave)
 	
 	# create a basic wave for the first one
 	if waveNum == 1:
@@ -132,10 +132,10 @@ func _process(delta):
 	
 	
 	# display info on screen
-	$Orbs.text = "Orbs: " + str(Globals.orbs)
+	$ui/Orbs.text = "Orbs: " + str(Globals.orbs)
 	if Globals.noWave == false:
-		$waveNum.text =  str(Globals.currentWave)
-	$Health.text = "HP: " + str(Globals.playerHealth)
+		$ui/waveNum.text =  str(Globals.currentWave)
+	$ui/Health.text = "HP: " + str(Globals.playerHealth)
 	
 	# get mouse position obv
 	mousePos = get_viewport().get_mouse_position()
