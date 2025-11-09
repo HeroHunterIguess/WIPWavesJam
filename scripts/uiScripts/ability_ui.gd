@@ -12,29 +12,33 @@ func _process(_delta):
 	
 	# ability 1 info
 	if Globals.ability1 == "Basic bullet":
-		$ability1/ability1Damage.text = str(Globals.basicBulletDamage)
-		$ability1/ability1Cooldown.text = str(round(Globals.basicBulletCooldown))
+		# if the ability is basic bullet
+		$ability1/ability1Damage.text = str(Globals.basicBulletDamage) + " DMG"
+		$ability1/ability1Cooldown.text = str(round(Globals.basicBulletCooldown)) + " CD"
 	elif Globals.ability1 == "Push wall":
-		$ability1/ability1Damage.text = str(Globals.wideAttackDamage)
-		$ability1/ability1Cooldown.text = str(round(Globals.wideAttackCooldown))
-	
+		# if the ability is push wall/wide attack
+		$ability1/ability1Damage.text = str(Globals.wideAttackDamage) + " DMG"
+		$ability1/ability1Cooldown.text = str(round(Globals.wideAttackCooldown)) + " CD"
 	
 	
 	# ability 2 info
 	if Globals.ability2 == "Basic bullet":
-		$ability2/ability2Damage.text = str(Globals.basicBulletDamage)
-		$ability2/ability2Cooldown.text = str(round(Globals.basicBulletCooldown))
+		# if the ability is basic bullet
+		$ability2/ability2Damage.text = str(Globals.basicBulletDamage) + " DMG"
+		$ability2/ability2Cooldown.text = str(int(round(Globals.basicBulletCooldown))) + " CD"
 	elif Globals.ability2 == "Push wall":
-		$ability2/ability2Damage.text = str(Globals.wideAttackDamage)
-		$ability2/ability2Cooldown.text = str(round(Globals.wideAttackCooldown))
-	
+		# if the ability is push wall/wide attack
+		$ability2/ability2Damage.text = str(Globals.wideAttackDamage) + " DMG"
+		$ability2/ability2Cooldown.text = str(int(round(Globals.wideAttackCooldown))) + " CD"
 	
 	
 	# ability 3 info
 	if Globals.ability3 == "Basic bullet":
-		$ability3/ability2Damage.text = str(Globals.basicBulletDamage)
-		$ability2/ability2Cooldown.text = str(round(Globals.basicBulletCooldown))
+		# if the ability is basic bullet
+		$ability3/ability2Damage.text = str(Globals.basicBulletDamage) + " DMG"
+		$ability2/ability2Cooldown.text = str(int(round(Globals.basicBulletCooldown))) + " CD"
 	elif Globals.ability3 == "Push wall":
-		$ability3/ability2Damage.text = str(Globals.wideAttackDamage)
-		$ability3/ability2Cooldown.text = str(round(Globals.wideAttackCooldown))
+		# if the ability is push wall/wide attack
+		$ability3/ability2Damage.text = str(Globals.wideAttackDamage) + " DMG"
+		$ability3/ability2Cooldown.text = str(int(round(Globals.wideAttackCooldown))) + " CD"
 	

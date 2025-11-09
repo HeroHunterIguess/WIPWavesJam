@@ -8,6 +8,12 @@ func _ready():
 
 
 
+func _process(_time):
+	if Input.is_action_pressed("openShop") && self.get_parent().visible == false:
+		get_tree().paused = false
+		self.get_parent().visible = false
+
+
 
 
 func shopInput():
