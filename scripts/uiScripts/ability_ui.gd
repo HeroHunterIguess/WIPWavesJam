@@ -4,7 +4,6 @@ func _process(_delta):
 	# show ability names
 	$ability1/ability1Name.text = Globals.ability1
 	$ability2/ability2Name.text = Globals.ability2
-	$ability3/ability3Name.text = Globals.ability3
 	
 	
 	
@@ -30,15 +29,4 @@ func _process(_delta):
 		# if the ability is push wall/wide attack
 		$ability2/ability2Damage.text = str(Globals.wideAttackDamage) + " DMG"
 		$ability2/ability2Cooldown.text = str(int(round(Globals.wideAttackCooldown))) + " CD"
-	
-	
-	# ability 3 info
-	if Globals.ability3 == "Basic bullet":
-		# if the ability is basic bullet
-		$ability3/ability2Damage.text = str(Globals.basicBulletDamage) + " DMG"
-		$ability2/ability2Cooldown.text = str(int(round(Globals.basicBulletCooldown))) + " CD"
-	elif Globals.ability3 == "Push wall":
-		# if the ability is push wall/wide attack
-		$ability3/ability2Damage.text = str(Globals.wideAttackDamage) + " DMG"
-		$ability3/ability2Cooldown.text = str(int(round(Globals.wideAttackCooldown))) + " CD"
 	

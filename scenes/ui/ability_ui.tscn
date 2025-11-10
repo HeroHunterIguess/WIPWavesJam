@@ -4,35 +4,36 @@
 [ext_resource type="Texture2D" uid="uid://cvbi6wdnrat2r" path="res://art/ui sprites/temporaryUI.png" id="1_neavp"]
 
 [node name="abilityUI" type="Node2D"]
-position = Vector2(196.00006, 712.00006)
+position = Vector2(4.000046, 712.00006)
 script = ExtResource("1_eel0r")
 
 [node name="ability1" type="Node" parent="."]
 
 [node name="ability1Cooldown" type="Label" parent="ability1"]
 anchors_preset = -1
+anchor_top = -0.008333334
 anchor_bottom = -0.008333334
-offset_left = 388.0
+offset_left = 195.99998
 offset_top = 680.00006
-offset_right = 580.0
+offset_right = 388.0
 offset_bottom = 720.00006
 theme_override_font_sizes/font_size = 24
 text = "Cooldown: "
 metadata/_edit_use_anchors_ = true
 
 [node name="ability1Damage" type="Label" parent="ability1"]
-offset_left = 388.0
+offset_left = 195.99998
 offset_top = 648.00006
-offset_right = 580.0
+offset_right = 388.0
 offset_bottom = 682.00006
 theme_override_font_sizes/font_size = 24
 text = "Damage: "
 metadata/_edit_use_anchors_ = true
 
 [node name="ability1Name" type="Label" parent="ability1"]
-offset_left = 388.0
+offset_left = 195.99998
 offset_top = 616.00006
-offset_right = 580.0
+offset_right = 388.0
 offset_bottom = 650.00006
 theme_override_font_sizes/font_size = 24
 text = "Basic Bullet"
@@ -42,9 +43,9 @@ metadata/_edit_use_anchors_ = true
 anchors_preset = -1
 anchor_left = 0.00625
 anchor_right = 0.14375
-offset_left = 380.0
+offset_left = 187.99998
 offset_top = 584.00006
-offset_right = 396.0
+offset_right = 204.0
 offset_bottom = 618.00006
 theme_override_font_sizes/font_size = 24
 text = "C"
@@ -55,20 +56,20 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ability2Cooldown" type="Label" parent="ability2"]
 anchors_preset = -1
-anchor_top = -0.008333334
+anchor_top = -0.016666668
 anchor_bottom = -0.016666668
-offset_left = 196.00006
+offset_left = 4.000046
 offset_top = 686.00006
-offset_right = 388.0
+offset_right = 195.99998
 offset_bottom = 726.00006
 theme_override_font_sizes/font_size = 24
 text = "Cooldown: "
 metadata/_edit_use_anchors_ = true
 
 [node name="ability2Damage" type="Label" parent="ability2"]
-offset_left = 196.00006
+offset_left = 4.000046
 offset_top = 648.00006
-offset_right = 388.0
+offset_right = 195.99998
 offset_bottom = 682.00006
 theme_override_font_sizes/font_size = 24
 text = "Damage: "
@@ -80,9 +81,9 @@ anchor_left = 1.0
 anchor_top = 2.8235295
 anchor_right = 1.0
 anchor_bottom = 2.8235295
-offset_left = -1084.0
+offset_left = -1276.0
 offset_top = -1416.9414
-offset_right = -892.0
+offset_right = -1084.0
 offset_bottom = -1382.9414
 theme_override_font_sizes/font_size = 24
 text = "Basic Bullet"
@@ -94,77 +95,18 @@ anchor_left = 9.0
 anchor_top = 3.7647057
 anchor_right = 9.1375
 anchor_bottom = 3.7647057
-offset_left = -11324.0
+offset_left = -11516.0
 offset_top = -2126.5881
-offset_right = -11308.0
+offset_right = -11500.0
 offset_bottom = -2092.5881
 theme_override_font_sizes/font_size = 24
 text = "X"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="ability3" type="Node" parent="."]
-
-[node name="ability3Cooldown" type="Label" parent="ability3"]
-anchors_preset = -1
-anchor_left = -3.0062501
-anchor_top = 2.579902
-anchor_right = -3.0062501
-anchor_bottom = 2.5715687
-offset_left = 3852.0
-offset_top = -1177.5293
-offset_right = 4044.0
-offset_bottom = -1137.5293
-theme_override_font_sizes/font_size = 24
-text = "Cooldown: "
-metadata/_edit_use_anchors_ = true
-
-[node name="ability3Damage" type="Label" parent="ability3"]
-anchors_preset = -1
-anchor_left = -3.0062501
-anchor_top = 2.5882354
-anchor_right = -3.0062501
-anchor_bottom = 2.5882354
-offset_left = 3852.0
-offset_top = -1215.5293
-offset_right = 4044.0
-offset_bottom = -1181.5293
-theme_override_font_sizes/font_size = 24
-text = "Damage: "
-metadata/_edit_use_anchors_ = true
-
-[node name="ability3Name" type="Label" parent="ability3"]
-anchors_preset = -1
-anchor_left = -3.0062501
-anchor_top = 2.5882354
-anchor_right = -3.0062501
-anchor_bottom = 2.5882354
-offset_left = 3852.0
-offset_top = -1247.5293
-offset_right = 4044.0
-offset_bottom = -1213.5293
-theme_override_font_sizes/font_size = 24
-text = "Basic Bullet"
-metadata/_edit_use_anchors_ = true
-
-[node name="Z" type="Label" parent="ability3"]
-anchors_preset = -1
-anchor_left = -2.9583333
-anchor_top = 2.5882354
-anchor_right = -2.8208332
-anchor_bottom = 2.5882354
-offset_left = 3790.6665
-offset_top = -1279.5293
-offset_right = 3806.6665
-offset_bottom = -1245.5293
-theme_override_font_sizes/font_size = 24
-text = "Z"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
 [node name="Node" type="Node" parent="."]
 
 [node name="TemporaryUi" type="Sprite2D" parent="Node"]
-position = Vector2(294, 656)
+position = Vector2(102, 656)
 scale = Vector2(0.5634328, 0.56804734)
 texture = ExtResource("1_neavp")
