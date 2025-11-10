@@ -5,9 +5,14 @@
 [node name="pauseMenu" type="Control"]
 process_mode = 3
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = -0.044000003
+anchor_top = -0.089
+anchor_right = 1.0500001
+anchor_bottom = 1.067
+offset_left = -7.6799965
+offset_top = 0.08000183
+offset_right = -0.00012207031
+offset_bottom = -0.24005127
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ra75s")
@@ -31,14 +36,45 @@ layout_mode = 2
 layout_mode = 2
 text = "Resume"
 
-[node name="bbDamage" type="Button" parent="PanelContainer/VBoxContainer"]
-layout_mode = 2
-text = "upgrade basic bullet damage"
+[node name="ability1Upgrade" type="Button" parent="."]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 216.0
+offset_right = 592.0
+offset_bottom = 384.0
+text = "Purcahse upgrade 1
+(x orbs)"
+autowrap_mode = 2
 
-[node name="bbSpeed" type="Button" parent="PanelContainer/VBoxContainer"]
-layout_mode = 2
-text = "upgrade basic bullet speed"
+[node name="ability2Upgrade" type="Button" parent="."]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 216.0
+offset_right = 784.0
+offset_bottom = 383.088
+text = "Purcahse upgrade 2 
+(x orbs)"
+autowrap_mode = 2
+
+[node name="ability3Upgrade" type="Button" parent="."]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 216.0
+offset_right = 976.0
+offset_bottom = 384.0
+text = "Purcahse upgrade 3
+(x orbs)"
+autowrap_mode = 2
+icon_alignment = 1
+
+[node name="newAbilityUpgrade" type="Button" parent="."]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 432.0
+offset_right = 896.0
+offset_bottom = 496.0
+text = "Purcahse new ability (x orbs)"
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/bbDamage" to="." method="_on_bb_damage_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/bbSpeed" to="." method="_on_bb_speed_pressed"]
+[connection signal="pressed" from="ability1Upgrade" to="." method="_on_bb_damage_pressed"]
+[connection signal="pressed" from="ability2Upgrade" to="." method="_on_bb_speed_pressed"]

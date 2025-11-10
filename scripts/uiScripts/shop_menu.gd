@@ -2,9 +2,9 @@ extends Control
 
 
 
-func _ready():
-	$PanelContainer/VBoxContainer/bbDamage.text = "upgrade basic bullet damage ("+str(Globals.basicBulletDamageCost)+" orbs)"
-	$PanelContainer/VBoxContainer/bbSpeed.text = "upgrade basic bullet speed ("+str(Globals.basicBulletSpeedCost)+" orbs)"
+#func _ready():
+	#$PanelContainer/VBoxContainer/bbDamage.text = "upgrade basic bullet damage ("+str(Globals.basicBulletDamageCost)+" orbs)"
+	#$PanelContainer/VBoxContainer/bbSpeed.text = "upgrade basic bullet speed ("+str(Globals.basicBulletSpeedCost)+" orbs)"
 
 
 
