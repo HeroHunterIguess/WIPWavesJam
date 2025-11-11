@@ -24,4 +24,5 @@ func _process(delta: float):
 func _on_bullet_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Enemy"):
 		area.get_parent().takeDamage(damage)
+		area.get_parent().takeKB(7)
 		queue_free()

@@ -38,9 +38,9 @@ text = "Resume"
 
 [node name="ability1Upgrade" type="Button" parent="."]
 layout_mode = 0
-offset_left = 432.0
+offset_left = 496.0
 offset_top = 216.0
-offset_right = 592.0
+offset_right = 656.0
 offset_bottom = 384.0
 text = "Purcahse upgrade 1
 (x orbs)"
@@ -48,26 +48,15 @@ autowrap_mode = 2
 
 [node name="ability2Upgrade" type="Button" parent="."]
 layout_mode = 0
-offset_left = 624.0
+offset_left = 752.0
 offset_top = 216.0
-offset_right = 784.0
+offset_right = 912.0
 offset_bottom = 383.088
 text = "Purcahse upgrade 2 
 (x orbs)"
 autowrap_mode = 2
 
-[node name="ability3Upgrade" type="Button" parent="."]
-layout_mode = 0
-offset_left = 816.0
-offset_top = 216.0
-offset_right = 976.0
-offset_bottom = 384.0
-text = "Purcahse upgrade 3
-(x orbs)"
-autowrap_mode = 2
-icon_alignment = 1
-
-[node name="newAbilityUpgrade" type="Button" parent="."]
+[node name="buyNewAbility" type="Button" parent="."]
 layout_mode = 0
 offset_left = 512.0
 offset_top = 432.0
@@ -76,5 +65,6 @@ offset_bottom = 496.0
 text = "Purcahse new ability (x orbs)"
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="ability1Upgrade" to="." method="_on_bb_damage_pressed"]
-[connection signal="pressed" from="ability2Upgrade" to="." method="_on_bb_speed_pressed"]
+[connection signal="pressed" from="ability1Upgrade" to="." method="_on_ability_1_upgrade_pressed"]
+[connection signal="pressed" from="ability2Upgrade" to="." method="_on_ability_2_upgrade_pressed"]
+[connection signal="pressed" from="buyNewAbility" to="." method="_on_buy_new_ability_pressed"]

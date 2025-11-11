@@ -2,9 +2,9 @@ extends Control
 
 
 
-#func _ready():
-	#$PanelContainer/VBoxContainer/bbDamage.text = "upgrade basic bullet damage ("+str(Globals.basicBulletDamageCost)+" orbs)"
-	#$PanelContainer/VBoxContainer/bbSpeed.text = "upgrade basic bullet speed ("+str(Globals.basicBulletSpeedCost)+" orbs)"
+func _ready():
+	$ability1Upgrade.text = ""
+	$ability2Upgrade.text = ""
 
 
 
@@ -25,6 +25,7 @@ func shopInput():
 
 
 
+
 # resume game if you press resume ofc
 func _on_resume_pressed() -> void:
 	get_tree().paused = false
@@ -32,4 +33,17 @@ func _on_resume_pressed() -> void:
 
 
 
-# check for buttons pressed & upgrade things
+
+
+# upgrade to new version of abilities
+func _on_ability_1_upgrade_pressed() -> void:
+	pass # Replace with function body.
+
+func _on_ability_2_upgrade_pressed() -> void:
+	pass # Replace with function body.
+
+
+
+
+func _on_buy_new_ability_pressed() -> void:
+	pass # Replace with function body.

@@ -8,6 +8,7 @@ var currentWave = 1
 
 
 
+
 var playerLocation = Vector2(640,688)
 var playerHealth = 20
 var noWave = false
@@ -18,6 +19,8 @@ var noWave = false
 # vars for push wall attack
 var wideAttackCooldown = 230
 var wideAttackDamage = 0.375
+var wideAttackSpeed = 190
+
 
 
 
@@ -28,10 +31,21 @@ var basicBulletSpeed = 560
 
 
 
+# list of all ability names:
+# Push wall
+# Basic bullet
+# Lazer             (not done)
+# Frag grenade      (not done)
+# Giant bullet      (not done)
+
+
 # abilities selected
 var ability1 = "Basic bullet" 
 var ability2 = "Push wall"
-var ability3 = ""
+
+
+
+
 
 
 
@@ -44,6 +58,9 @@ func decreasePlayerHealth(amount):
 func hitByBasicBullet(EnemyHP):
 	EnemyHP -= 1
 	return EnemyHP
+
+
+
 
 # resetting all essential variables back to defaults 
 func reset():

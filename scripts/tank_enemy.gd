@@ -9,8 +9,8 @@ func takeDamage(amount):
 	health -= amount
 
 # take knockback from being hit by bigger attacks
-func takeKB():
-	position.y -= 15
+func takeKB(amount):
+	position.y -= amount
 
 
 # enemy will travel towards the player location

@@ -10,8 +10,8 @@ func takeDamage(amount):
 
 
 # take knockback from being hit by bigger attacks
-func takeKB():
-	position.y -= 30
+func takeKB(amount):
+	position.y -= amount
 
 
 

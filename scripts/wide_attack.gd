@@ -1,7 +1,7 @@
 extends Node2D
 
 var velocity = Vector2.ZERO
-var speed = 250
+var speed = Globals.wideAttackSpeed
 var damage = Globals.wideAttackDamage
 
 var enemyHitCount = 0
@@ -26,7 +26,7 @@ func _on_wide_attack_hitbox_area_entered(area: Area2D) -> void:
 	# check if it hits enemy then deal kb and damage to enemy
 	if area.is_in_group("Enemy"):
 		area.get_parent().takeDamage(damage)
-		area.get_parent().takeKB()
+		area.get_parent().takeKB(20)
 		enemyHitCount += 1
 		# check if its hit its enemy limit and reset timer
 		if enemyHitCount >= 20:
