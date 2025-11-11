@@ -1,6 +1,6 @@
 extends Node2D
 
-var health = 17
+var health = 18
 var damage = 5
 
 
@@ -15,7 +15,7 @@ func takeKB():
 
 # enemy will travel towards the player location
 func moveToPlayer():
-	var speed = 0.45
+	var speed = 0.55
 	# calculate distance to player location
 	var dx = Globals.playerLocation.x - position.x
 	var dy = Globals.playerLocation.y - position.y
