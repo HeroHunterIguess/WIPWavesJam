@@ -54,12 +54,15 @@ func upgradeBasicBullet():
 	Globals.basicBulletDamage += 1
 	Globals.basicBulletSpeed += 90
 	Globals.basicBulletLevel += 1
+	Globals.orbs -= Globals.basicBulletLevel * 40
 
 func upgradePushWall():
 	Globals.wideAttackCooldown -= 15
 	Globals.wideAttackDamage += 0.25
 	Globals.wideAttackSpeed += 50
 	Globals.wideAttackLevel += 1
+	Globals.orbs -= Globals.wideAttackLevel * 40
+	
 
 
 
@@ -73,6 +76,7 @@ func _on_ability_1_upgrade_pressed() -> void:
 	if Globals.ability1 == "Basic bullet": 
 		if Globals.orbs >= Globals.basicBulletLevel * 40:
 			upgradeBasicBullet()
+			$ability1Upgrade.text = "PURCHASED"
 		else:
 			$ability1Upgrade.text = "NOT ENOUGH ORBS"
 			await get_tree().create_timer(0.75).timeout
@@ -82,6 +86,7 @@ func _on_ability_1_upgrade_pressed() -> void:
 	if Globals.ability1 == "Push wall":
 		if Globals.orbs >= Globals.wideAttackLevel * 50:
 			upgradePushWall()
+			$ability1Upgrade.text = "PURCAHSED"
 		else:
 			$ability1Upgrade.text = "NOT ENOUGH ORBS"
 			await get_tree().create_timer(0.75).timeout
@@ -98,6 +103,7 @@ func _on_ability_2_upgrade_pressed() -> void:
 	if Globals.ability2 == "Basic bullet": 
 		if Globals.orbs >= Globals.basicBulletLevel * 40:
 			upgradeBasicBullet()
+			$ability1Upgrade.text = "PURCHASED"
 		else:
 			$ability2Upgrade.text = "NOT ENOUGH ORBS"
 			await get_tree().create_timer(0.75).timeout
@@ -107,6 +113,7 @@ func _on_ability_2_upgrade_pressed() -> void:
 	if Globals.ability2 == "Push wall":
 		if Globals.orbs >= Globals.wideAttackLevel * 50:
 			upgradePushWall()
+			$ability1Upgrade.text = "PURCHASED"
 		else:
 			$ability2Upgrade.text = "NOT ENOUGH ORBS"
 			await get_tree().create_timer(0.75).timeout
