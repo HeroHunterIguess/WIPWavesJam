@@ -20,7 +20,7 @@ var noWave = false
 var wideAttackCooldown = 230
 var wideAttackDamage = 0.375
 var wideAttackSpeed = 190
-
+var wideAttackLevel = 1
 
 
 
@@ -28,6 +28,7 @@ var wideAttackSpeed = 190
 var basicBulletCooldown = 18
 var basicBulletDamage = 1.375
 var basicBulletSpeed = 560
+var basicBulletLevel = 1
 
 
 
@@ -42,7 +43,6 @@ var basicBulletSpeed = 560
 # abilities selected
 var ability1 = "Basic bullet" 
 var ability2 = "Push wall"
-
 
 
 
