@@ -107,6 +107,6 @@ metadata/_edit_use_anchors_ = true
 [node name="Node" type="Node" parent="."]
 
 [node name="TemporaryUi" type="Sprite2D" parent="Node"]
-position = Vector2(100, 656)
-scale = Vector2(0.57462686, 0.56804734)
+position = Vector2(88.00001, 656)
+scale = Vector2(0.5932836, 0.5443788)
 texture = ExtResource("1_neavp")

@@ -89,6 +89,7 @@ script = ExtResource("1_ltt4m")
 offset_right = 1280.0
 offset_bottom = 720.0
 color = Color(3.85046e-07, 0.1639067, 0.23488745, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="shaderBG" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_faocy")
@@ -96,6 +97,7 @@ offset_left = -136.0
 offset_top = -136.0
 offset_right = 1496.0
 offset_bottom = 864.0
+metadata/_edit_use_anchors_ = true
 
 [node name="goobert" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -124,6 +126,7 @@ offset_top = -152.0
 offset_right = 1288.0
 offset_bottom = 832.0
 color = Color(0, 0, 0, 0.30588236)
+metadata/_edit_use_anchors_ = true
 
 [node name="ui" type="CanvasLayer" parent="."]
 
@@ -134,6 +137,7 @@ offset_right = 840.0
 offset_bottom = 711.0
 theme_override_font_sizes/font_size = 32
 text = "HP:"
+metadata/_edit_use_anchors_ = true
 
 [node name="waveNum" type="Label" parent="ui"]
 modulate = Color(0.98240346, 0.9709955, 0.9668992, 1)
@@ -144,6 +148,7 @@ offset_bottom = 115.0
 theme_override_fonts/font = ExtResource("5_ct5qv")
 theme_override_font_sizes/font_size = 90
 text = "1"
+metadata/_edit_use_anchors_ = true
 
 [node name="Orbs" type="Label" parent="ui"]
 offset_left = 24.0
@@ -152,6 +157,7 @@ offset_right = 216.0
 offset_bottom = 200.0
 theme_override_font_sizes/font_size = 32
 text = "Orbs: "
+metadata/_edit_use_anchors_ = true
 
 [node name="waveTextAnimation" type="AnimatedSprite2D" parent="ui"]
 texture_filter = 1
@@ -164,6 +170,7 @@ frame_progress = 0.37356403
 [node name="pauseMenuLayer" type="CanvasLayer" parent="."]
 
 [node name="pauseMenu" parent="pauseMenuLayer" instance=ExtResource("3_yqbs0")]
+metadata/_edit_use_anchors_ = true
 
 [node name="abilityUI" parent="." instance=ExtResource("8_seagn")]
 position = Vector2(780.00006, 1160)
