@@ -32,6 +32,16 @@ var basicBulletLevel = 1
 
 
 
+# vars for frag grenade
+var fragGrenadeCooldown = 375
+var fragGrenadeDamage = 10
+var fragGrenadeSpeed = 350
+var fragGrenadeAmount = 8
+var fragDamage = 1.25
+var fragGrenadeLevel = 1
+
+
+
 # list of all ability names:
 # Push wall
 # Basic bullet
@@ -42,7 +52,7 @@ var basicBulletLevel = 1
 
 # abilities selected
 var ability1 = "Basic bullet" 
-var ability2 = "Push wall"
+var ability2 = "Frag grenade"
 
 
 

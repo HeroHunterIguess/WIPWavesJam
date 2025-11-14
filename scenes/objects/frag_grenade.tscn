@@ -35,7 +35,7 @@ script = ExtResource("1_udr5m")
 scale = Vector2(2.125, 2.125)
 sprite_frames = SubResource("SpriteFrames_8k04o")
 autoplay = "default"
-frame_progress = 0.65971684
+frame_progress = 0.35017955
 
 [node name="fragGrenadeHitbox" type="Area2D" parent="." groups=["basicBulletShot"]]
 

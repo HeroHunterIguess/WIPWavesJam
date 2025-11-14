@@ -51,7 +51,7 @@ func _on_resume_pressed() -> void:
 
 # funcs to do the upgrading
 func upgradeBasicBullet():
-	Globals.orbs -= Globals.basicBulletLevel * 40
+	Globals.orbs -= Globals.basicBulletLevel * 35
 	Globals.basicBulletCooldown -= 5
 	Globals.basicBulletDamage += 1
 	Globals.basicBulletSpeed += 90
@@ -59,13 +59,21 @@ func upgradeBasicBullet():
 
 
 func upgradePushWall():
-	Globals.orbs -= Globals.wideAttackLevel * 40
+	Globals.orbs -= Globals.wideAttackLevel * 35
 	Globals.wideAttackCooldown -= 15
 	Globals.wideAttackDamage += 0.25
 	Globals.wideAttackSpeed += 40
 	Globals.wideAttackLevel += 1
 
 
+func upgradeFragGrenade():
+	Globals.orbs -= Globals.fragGrenadeLevel * 35
+	Globals.fragGrenadeCooldown -= 10
+	Globals.fragGrenadeDamage += 0.25
+	Globals.fragGrenadeSpeed += 50
+	Globals.fragGrenadeAmount += 1
+	Globals.fragGrenadeLevel += 1
+	Globals.fragDamage += 0.2
 
 
 
@@ -75,7 +83,7 @@ func _on_ability_1_upgrade_pressed() -> void:
 	
 	# upgrades for basic bullet
 	if Globals.ability1 == "Basic bullet": 
-		if Globals.orbs >= Globals.basicBulletLevel * 40:
+		if Globals.orbs >= Globals.basicBulletLevel * 35:
 			upgradeBasicBullet()
 			$ability1Upgrade.text = "PURCHASED"
 			await get_tree().create_timer(1.0).timeout
@@ -87,7 +95,7 @@ func _on_ability_1_upgrade_pressed() -> void:
 	
 	# upgrades for push wall
 	if Globals.ability1 == "Push wall":
-		if Globals.orbs >= Globals.wideAttackLevel * 40:
+		if Globals.orbs >= Globals.wideAttackLevel * 35:
 			upgradePushWall()
 			$ability1Upgrade.text = "PURCHASED"
 			await get_tree().create_timer(1.0).timeout
@@ -106,7 +114,7 @@ func _on_ability_2_upgrade_pressed() -> void:
 	
 	# upgrades for basic bullet
 	if Globals.ability2 == "Basic bullet": 
-		if Globals.orbs >= Globals.basicBulletLevel * 40:
+		if Globals.orbs >= Globals.basicBulletLevel * 35:
 			upgradeBasicBullet()
 			$ability2Upgrade.text = "PURCHASED"
 			await get_tree().create_timer(1.0).timeout
@@ -118,7 +126,7 @@ func _on_ability_2_upgrade_pressed() -> void:
 	
 	# upgrades for push wall
 	if Globals.ability2 == "Push wall":
-		if Globals.orbs >= Globals.wideAttackLevel * 40:
+		if Globals.orbs >= Globals.wideAttackLevel * 35:
 			upgradePushWall()
 			$ability2Upgrade.text = "PURCHASED"
 			await get_tree().create_timer(1.0).timeout

@@ -7,6 +7,7 @@ const basicBulletPreload = preload("res://scenes/objects/basic_bullet.tscn")
 const fastEnemyPreload = preload("res://scenes/objects/enemy types/fast_enemy.tscn")
 const tankEnemyPreload = preload("res://scenes/objects/enemy types/tank_enemy.tscn")
 const wideAttackPreload = preload("res://scenes/objects/wide_attack.tscn")
+const fragGrenadePreload = preload("res://scenes/objects/frag_grenade.tscn")
 
 var mousePos
 
@@ -97,6 +98,8 @@ func spawnBullet():
 # spawns the wide push attack in mouse dir
 func spawnWideAttack():
 	
+	Globals.wideAttackCooldown = 200
+	
 	# spawning the wave at player location
 	var wideAttack = wideAttackPreload.instantiate()
 	add_child(wideAttack)
@@ -109,6 +112,18 @@ func spawnWideAttack():
 	wideAttack.look_at(mousePos)
 	wideAttack.rotation_degrees += 90
 
+func spawnFragGrenade():
+	
+	# reset shoot cooldown
+	Globals.fragGrenadeCooldown = 375
+	# spawning bullet at player location
+	var fragGrenade = fragGrenadePreload.instantiate()
+	add_child(fragGrenade)
+	fragGrenade.global_position = Vector2(640,688)
+	
+	# get direction and set velocity to go there
+	var dir = (get_global_mouse_position() - fragGrenade.global_position).normalized()
+	fragGrenade.velocity = dir * fragGrenade.speed
 
 
 
@@ -118,10 +133,14 @@ func _process(delta):
 	# attack cooldowns
 	Globals.wideAttackCooldown -= 125 * delta
 	Globals.basicBulletCooldown -= 125 * delta
+	Globals.fragGrenadeCooldown -= 125 * delta
 	if Globals.wideAttackCooldown < 0:
 		Globals.wideAttackCooldown = 0
 	if Globals.basicBulletCooldown < 0:
 		Globals.basicBulletCooldown = 0
+	if Globals.fragGrenadeCooldown < 0:
+		Globals.fragGrenadeCooldown = 0
+	
 	
 	
 	
@@ -139,18 +158,36 @@ func _process(delta):
 	
 	
 	
-	
 	if Input.is_action_just_pressed("openShop"):
 		get_tree().paused = true
 		$pauseMenuLayer.visible = true
 	
+	
+	
 	#keybind for abilities
-	if Input.is_action_just_pressed("ability3") && Globals.basicBulletCooldown <= 0:
-		spawnBullet()
-	if Input.is_action_just_pressed("ability2"):
-		if Globals.wideAttackCooldown <= 0:
+	
+	if Input.is_action_just_pressed("ability3"):
+		## checking for abilities in slot 1 and doing that
+		if Globals.ability1 == "Basic bullet" && Globals.basicBulletCooldown <= 0:
+			spawnBullet()
+		if Globals.ability1 == "Push wall" && Globals.wideAttackCooldown <= 0:
 			spawnWideAttack()
-			Globals.wideAttackCooldown = 200
+		if Globals.ability1 == "Frag grenade" && Globals.fragGrenadeCooldown <= 0:
+			spawnFragGrenade()
+		
+		
+		
+		# checking for abilities in slot 2 and spawning those
+		
+	if Input.is_action_just_pressed("ability2"):
+		if Globals.ability2 == "Basic bullet" && Globals.basicBulletCooldown <= 0:
+			spawnBullet()
+		if Globals.ability2 == "Push wall" && Globals.wideAttackCooldown <= 0:
+			spawnWideAttack()
+		if Globals.ability2 == "Frag grenade" && Globals.fragGrenadeCooldown <= 0:
+			spawnFragGrenade()
+	
+	
 	
 	
 	
