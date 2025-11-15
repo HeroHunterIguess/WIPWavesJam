@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bbwd7k4w1smjy"]
+[gd_scene load_steps=4 format=3 uid="uid://bbwd7k4w1smjy"]
 
 [ext_resource type="Script" uid="uid://bgq7gmk3uefqj" path="res://scripts/uiScripts/ability_ui.gd" id="1_eel0r"]
 [ext_resource type="Texture2D" uid="uid://cvbi6wdnrat2r" path="res://art/ui sprites/temporaryUI.png" id="1_neavp"]
+[ext_resource type="FontFile" uid="uid://cq6pxojdhmyhs" path="res://fonts/daydream_3/Daydream DEMO.otf" id="2_1d616"]
 
 [node name="abilityUI" type="Node2D"]
 position = Vector2(4.000046, 712.00006)
@@ -13,29 +14,32 @@ script = ExtResource("1_eel0r")
 anchors_preset = -1
 anchor_top = -0.008333334
 anchor_bottom = -0.008333334
-offset_left = 195.99998
-offset_top = 680.00006
-offset_right = 388.0
-offset_bottom = 720.00006
-theme_override_font_sizes/font_size = 24
+offset_left = 192.0
+offset_top = 686.0
+offset_right = 384.0
+offset_bottom = 726.0
+theme_override_fonts/font = ExtResource("2_1d616")
+theme_override_font_sizes/font_size = 14
 text = "Cooldown: "
 metadata/_edit_use_anchors_ = true
 
 [node name="ability1Damage" type="Label" parent="ability1"]
-offset_left = 195.99998
-offset_top = 648.00006
-offset_right = 388.0
-offset_bottom = 682.00006
-theme_override_font_sizes/font_size = 24
+offset_left = 192.0
+offset_top = 648.0
+offset_right = 384.0
+offset_bottom = 682.0
+theme_override_fonts/font = ExtResource("2_1d616")
+theme_override_font_sizes/font_size = 14
 text = "Damage: "
 metadata/_edit_use_anchors_ = true
 
 [node name="ability1Name" type="Label" parent="ability1"]
-offset_left = 195.99998
-offset_top = 616.00006
-offset_right = 388.0
-offset_bottom = 650.00006
-theme_override_font_sizes/font_size = 24
+offset_left = 192.0
+offset_top = 616.0
+offset_right = 384.0
+offset_bottom = 650.0
+theme_override_fonts/font = ExtResource("2_1d616")
+theme_override_font_sizes/font_size = 14
 text = "Basic Bullet"
 metadata/_edit_use_anchors_ = true
 
@@ -43,11 +47,12 @@ metadata/_edit_use_anchors_ = true
 anchors_preset = -1
 anchor_left = 0.00625
 anchor_right = 0.14375
-offset_left = 187.99998
-offset_top = 584.00006
-offset_right = 204.0
-offset_bottom = 618.00006
-theme_override_font_sizes/font_size = 24
+offset_left = 184.0
+offset_top = 592.0
+offset_right = 200.0
+offset_bottom = 626.0
+theme_override_fonts/font = ExtResource("2_1d616")
+theme_override_font_sizes/font_size = 14
 text = "C"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -58,20 +63,20 @@ metadata/_edit_use_anchors_ = true
 anchors_preset = -1
 anchor_top = -0.016666668
 anchor_bottom = -0.016666668
-offset_left = 4.000046
-offset_top = 686.00006
-offset_right = 195.99998
-offset_bottom = 726.00006
-theme_override_font_sizes/font_size = 24
+offset_top = 692.0
+offset_right = 191.99994
+offset_bottom = 732.0
+theme_override_fonts/font = ExtResource("2_1d616")
+theme_override_font_sizes/font_size = 14
 text = "Cooldown: "
 metadata/_edit_use_anchors_ = true
 
 [node name="ability2Damage" type="Label" parent="ability2"]
-offset_left = 4.000046
-offset_top = 648.00006
-offset_right = 195.99998
-offset_bottom = 682.00006
-theme_override_font_sizes/font_size = 24
+offset_top = 648.0
+offset_right = 191.99994
+offset_bottom = 682.0
+theme_override_fonts/font = ExtResource("2_1d616")
+theme_override_font_sizes/font_size = 14
 text = "Damage: "
 metadata/_edit_use_anchors_ = true
 
@@ -81,11 +86,12 @@ anchor_left = 1.0
 anchor_top = 2.8235295
 anchor_right = 1.0
 anchor_bottom = 2.8235295
-offset_left = -1276.0
-offset_top = -1416.9414
-offset_right = -1084.0
-offset_bottom = -1382.9414
-theme_override_font_sizes/font_size = 24
+offset_left = -1280.0
+offset_top = -1416.9413
+offset_right = -1088.0
+offset_bottom = -1382.9413
+theme_override_fonts/font = ExtResource("2_1d616")
+theme_override_font_sizes/font_size = 14
 text = "Basic Bullet"
 metadata/_edit_use_anchors_ = true
 
@@ -95,11 +101,12 @@ anchor_left = 9.0
 anchor_top = 3.7647057
 anchor_right = 9.1375
 anchor_bottom = 3.7647057
-offset_left = -11516.0
-offset_top = -2126.5881
-offset_right = -11500.0
-offset_bottom = -2092.5881
-theme_override_font_sizes/font_size = 24
+offset_left = -11520.0
+offset_top = -2118.5881
+offset_right = -11504.0
+offset_bottom = -2084.5881
+theme_override_fonts/font = ExtResource("2_1d616")
+theme_override_font_sizes/font_size = 14
 text = "X"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
