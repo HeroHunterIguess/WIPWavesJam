@@ -5,7 +5,7 @@ extends Node
 var orbs = 0
 var overallScore = 0
 var currentWave = 1
-var rerollCost = 20
+var rerollCost = 10
 
 
 

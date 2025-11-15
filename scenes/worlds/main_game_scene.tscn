@@ -46,7 +46,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ltt4m"]
-radius = 49.230774
+radius = 39.384583
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xxp0d"]
 shader = ExtResource("5_faocy")
@@ -194,7 +194,7 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="abilityUI" parent="." instance=ExtResource("8_seagn")]
-position = Vector2(780.00006, 1160)
+position = Vector2(392, 720)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(640, 288)
