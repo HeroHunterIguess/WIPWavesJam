@@ -43,8 +43,7 @@ offset_top = 184.0
 offset_right = 672.0
 offset_bottom = 352.0
 theme_override_font_sizes/font_size = 20
-text = "Purcahse upgrade 1
-(x orbs)"
+text = "No ability in this slot."
 autowrap_mode = 2
 
 [node name="ability2Upgrade" type="Button" parent="."]
@@ -54,8 +53,7 @@ offset_top = 184.0
 offset_right = 976.0
 offset_bottom = 351.088
 theme_override_font_sizes/font_size = 20
-text = "Purcahse upgrade 2 
-(x orbs)"
+text = "No ability in this slot."
 autowrap_mode = 2
 
 [node name="buyNewAbility" type="Button" parent="."]
@@ -65,7 +63,7 @@ offset_top = 384.0
 offset_right = 976.0
 offset_bottom = 472.0
 theme_override_font_sizes/font_size = 17
-text = "Replace an ability slot with [new ability] (x orbs)"
+text = "No abilities to buy."
 
 [node name="rerollNewAbilities" type="Button" parent="."]
 layout_mode = 0
@@ -98,3 +96,6 @@ text = "Replace [ability 2]"
 [connection signal="pressed" from="ability1Upgrade" to="." method="_on_ability_1_upgrade_pressed"]
 [connection signal="pressed" from="ability2Upgrade" to="." method="_on_ability_2_upgrade_pressed"]
 [connection signal="pressed" from="buyNewAbility" to="." method="_on_buy_new_ability_pressed"]
+[connection signal="pressed" from="rerollNewAbilities" to="." method="_on_reroll_new_abilities_pressed"]
+[connection signal="pressed" from="whichAbility/selectAbility1" to="." method="_on_select_ability_1_pressed"]
+[connection signal="pressed" from="whichAbility/selectAbility2" to="." method="_on_select_ability_2_pressed"]
