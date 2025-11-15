@@ -20,7 +20,6 @@ offset_right = 384.0
 offset_bottom = 726.0
 theme_override_fonts/font = ExtResource("2_1d616")
 theme_override_font_sizes/font_size = 14
-text = "Cooldown: "
 metadata/_edit_use_anchors_ = true
 
 [node name="ability1Damage" type="Label" parent="ability1"]
@@ -30,7 +29,6 @@ offset_right = 384.0
 offset_bottom = 682.0
 theme_override_fonts/font = ExtResource("2_1d616")
 theme_override_font_sizes/font_size = 14
-text = "Damage: "
 metadata/_edit_use_anchors_ = true
 
 [node name="ability1Name" type="Label" parent="ability1"]
@@ -40,7 +38,6 @@ offset_right = 384.0
 offset_bottom = 650.0
 theme_override_fonts/font = ExtResource("2_1d616")
 theme_override_font_sizes/font_size = 14
-text = "Basic Bullet"
 metadata/_edit_use_anchors_ = true
 
 [node name="C" type="Label" parent="ability1"]
@@ -68,7 +65,6 @@ offset_right = 191.99994
 offset_bottom = 732.0
 theme_override_fonts/font = ExtResource("2_1d616")
 theme_override_font_sizes/font_size = 14
-text = "Cooldown: "
 metadata/_edit_use_anchors_ = true
 
 [node name="ability2Damage" type="Label" parent="ability2"]
@@ -77,7 +73,6 @@ offset_right = 191.99994
 offset_bottom = 682.0
 theme_override_fonts/font = ExtResource("2_1d616")
 theme_override_font_sizes/font_size = 14
-text = "Damage: "
 metadata/_edit_use_anchors_ = true
 
 [node name="ability2Name" type="Label" parent="ability2"]
@@ -92,7 +87,6 @@ offset_right = -1088.0
 offset_bottom = -1382.9413
 theme_override_fonts/font = ExtResource("2_1d616")
 theme_override_font_sizes/font_size = 14
-text = "Basic Bullet"
 metadata/_edit_use_anchors_ = true
 
 [node name="X" type="Label" parent="ability2"]

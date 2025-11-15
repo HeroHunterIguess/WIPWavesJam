@@ -115,7 +115,7 @@ func spawnWideAttack():
 func spawnFragGrenade():
 	
 	# reset shoot cooldown
-	Globals.fragGrenadeCooldown = 375
+	Globals.fragGrenadeCooldown = 325
 	# spawning bullet at player location
 	var fragGrenade = fragGrenadePreload.instantiate()
 	add_child(fragGrenade)

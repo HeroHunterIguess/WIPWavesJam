@@ -17,6 +17,7 @@ var noWave = false
 
 
 # vars for push wall attack
+var wideAttackBaseCost = 45
 var wideAttackCooldown = 230
 var wideAttackDamage = 0.375
 var wideAttackSpeed = 190
@@ -26,18 +27,19 @@ var wideAttackLevel = 1
 
 # vars for basic bullet
 var basicBulletCooldown = 18
-var basicBulletDamage = 1.375
+var basicBulletDamage = 1.475
 var basicBulletSpeed = 560
 var basicBulletLevel = 1
 
 
 
 # vars for frag grenade
-var fragGrenadeCooldown = 375
+var fragGrenadeBaseCost = 30
+var fragGrenadeCooldown = 325
 var fragGrenadeDamage = 10
 var fragGrenadeSpeed = 350
 var fragGrenadeAmount = 8
-var fragDamage = 1.25
+var fragDamage = 1.5
 var fragGrenadeLevel = 1
 
 

@@ -29,4 +29,9 @@ text = "GOOBCORE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Label2" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "main theme by richmnkey"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

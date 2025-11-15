@@ -61,29 +61,38 @@ autowrap_mode = 2
 [node name="buyNewAbility" type="Button" parent="."]
 layout_mode = 0
 offset_left = 432.0
-offset_top = 368.0
+offset_top = 384.0
 offset_right = 976.0
-offset_bottom = 424.0
+offset_bottom = 472.0
 theme_override_font_sizes/font_size = 17
-text = "Replace [ability] with [new ability] (x orbs)"
-
-[node name="buyNewAbility2" type="Button" parent="."]
-layout_mode = 0
-offset_left = 432.0
-offset_top = 432.0
-offset_right = 976.0
-offset_bottom = 488.0
-theme_override_font_sizes/font_size = 17
-text = "Replace [ability] with [new ability] (x orbs)"
+text = "Replace an ability slot with [new ability] (x orbs)"
 
 [node name="rerollNewAbilities" type="Button" parent="."]
 layout_mode = 0
 offset_left = 600.0
-offset_top = 504.0
+offset_top = 496.0
 offset_right = 808.0
 offset_bottom = 536.0
 theme_override_font_sizes/font_size = 14
-text = "Reroll abilities (x orbs) "
+text = "Reroll ability (x orbs) "
+
+[node name="whichAbility" type="Node" parent="."]
+
+[node name="selectAbility1" type="Button" parent="whichAbility"]
+visible = false
+offset_left = 376.0
+offset_top = 328.0
+offset_right = 632.0
+offset_bottom = 400.0
+text = "Replace [ability 1]"
+
+[node name="selectAbility2" type="Button" parent="whichAbility"]
+visible = false
+offset_left = 648.0
+offset_top = 328.0
+offset_right = 904.0
+offset_bottom = 400.0
+text = "Replace [ability 2]"
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="ability1Upgrade" to="." method="_on_ability_1_upgrade_pressed"]
