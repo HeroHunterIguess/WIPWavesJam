@@ -10,7 +10,7 @@ var rerollCost = 20
 
 
 var playerLocation = Vector2(640,688)
-var playerHealth = 20
+var playerHealth = 30
 var noWave = false
 
 
@@ -77,6 +77,6 @@ func hitByBasicBullet(EnemyHP):
 # resetting all essential variables back to defaults 
 func reset():
 	orbs = 0
-	playerHealth = 20
+	playerHealth = 30
 	currentWave = 1
 	noWave = false
