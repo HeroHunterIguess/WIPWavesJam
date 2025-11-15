@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://cjmhedyfgbq1f" path="res://art/character sprites/goobert.png" id="2_yqbs0"]
 [ext_resource type="PackedScene" uid="uid://c2auc2m4mpwfa" path="res://scenes/ui/ShopMenu.tscn" id="3_yqbs0"]
 [ext_resource type="Texture2D" uid="uid://dobae4cuk80r0" path="res://art/character sprites/wave-Sheet.png" id="4_xxp0d"]
-[ext_resource type="FontFile" uid="uid://nc51osgctt71" path="res://fonts/playful-time-star-font/PlayfulTime-BLBB8.ttf" id="5_ct5qv"]
 [ext_resource type="Shader" uid="uid://dpgrreyk6hoah" path="res://shaders/game_overlay.gdshader" id="5_faocy"]
+[ext_resource type="FontFile" uid="uid://cq6pxojdhmyhs" path="res://fonts/daydream_3/Daydream DEMO.otf" id="5_seagn"]
 [ext_resource type="PackedScene" uid="uid://bbwd7k4w1smjy" path="res://scenes/ui/ability_ui.tscn" id="8_seagn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_faocy"]
@@ -135,6 +135,7 @@ offset_left = 688.0
 offset_top = 648.0
 offset_right = 840.0
 offset_bottom = 711.0
+theme_override_fonts/font = ExtResource("5_seagn")
 theme_override_font_sizes/font_size = 32
 text = "HP:"
 metadata/_edit_use_anchors_ = true
@@ -142,19 +143,28 @@ metadata/_edit_use_anchors_ = true
 [node name="waveNum" type="Label" parent="ui"]
 modulate = Color(0.98240346, 0.9709955, 0.9668992, 1)
 texture_filter = 1
-offset_left = 216.0
-offset_right = 360.0
-offset_bottom = 115.0
-theme_override_fonts/font = ExtResource("5_ct5qv")
-theme_override_font_sizes/font_size = 90
+anchors_preset = -1
+anchor_left = 0.17500001
+anchor_right = 0.28725
+anchor_bottom = 0.2
+offset_right = 0.3199768
+offset_bottom = 3.0
+theme_override_fonts/font = ExtResource("5_seagn")
+theme_override_font_sizes/font_size = 70
 text = "1"
 metadata/_edit_use_anchors_ = true
 
 [node name="Orbs" type="Label" parent="ui"]
-offset_left = 24.0
-offset_top = 136.0
-offset_right = 216.0
-offset_bottom = 200.0
+anchors_preset = -1
+anchor_left = 0.019000001
+anchor_top = 0.17788889
+anchor_right = 0.16900001
+anchor_bottom = 0.27800003
+offset_left = -0.3200016
+offset_top = -0.08000183
+offset_right = -0.32002258
+offset_bottom = -0.16001892
+theme_override_fonts/font = ExtResource("5_seagn")
 theme_override_font_sizes/font_size = 32
 text = "Orbs: "
 metadata/_edit_use_anchors_ = true
