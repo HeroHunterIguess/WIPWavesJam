@@ -178,6 +178,16 @@ sprite_frames = SubResource("SpriteFrames_c7761")
 autoplay = "default"
 frame_progress = 0.37356403
 
+[node name="openShopLabel" type="Label" parent="ui"]
+visible = false
+offset_left = 384.0
+offset_right = 896.0
+offset_bottom = 88.0
+theme_override_fonts/font = ExtResource("5_seagn")
+theme_override_font_sizes/font_size = 20
+text = "Press tab to open the shop!"
+horizontal_alignment = 1
+
 [node name="pauseMenuLayer" type="CanvasLayer" parent="."]
 
 [node name="pauseMenu" parent="pauseMenuLayer" instance=ExtResource("3_yqbs0")]
@@ -191,15 +201,6 @@ position = Vector2(640, 288)
 stream = ExtResource("9_c7761")
 volume_db = -19.158
 autoplay = true
-
-[node name="openShopLabel" type="Label" parent="."]
-offset_left = 384.0
-offset_right = 896.0
-offset_bottom = 88.0
-theme_override_fonts/font = ExtResource("5_seagn")
-theme_override_font_sizes/font_size = 20
-text = "Press tab to open the shop!"
-horizontal_alignment = 1
 
 [connection signal="area_entered" from="playerHitbox" to="." method="_on_player_hitbox_area_entered"]
 [connection signal="timeout" from="SpawningTimer" to="." method="_on_spawntimer_timeout"]

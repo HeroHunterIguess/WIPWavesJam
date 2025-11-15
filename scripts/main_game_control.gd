@@ -73,6 +73,12 @@ func _ready():
 	# initialize first wave
 	advancedWaveControl(Globals.currentWave)
 	$pauseMenuLayer.visible = false
+	
+	
+	
+	# KEEP THIS LAST IN _READY
+	await get_tree().create_timer(25.0).timeout
+	$ui/openShopLabel.visible = true
 
 
 
@@ -159,7 +165,7 @@ func _process(delta):
 	
 	
 	if Input.is_action_just_pressed("openShop"):
-		$openShopLabel.visible = false
+		$ui/openShopLabel.visible = false
 		get_tree().paused = true
 		$pauseMenuLayer.visible = true
 	
