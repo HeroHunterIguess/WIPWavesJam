@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbwd7k4w1smjy"]
+[gd_scene load_steps=3 format=3 uid="uid://bbwd7k4w1smjy"]
 
 [ext_resource type="Script" uid="uid://bgq7gmk3uefqj" path="res://scripts/uiScripts/ability_ui.gd" id="1_eel0r"]
-[ext_resource type="Texture2D" uid="uid://cvbi6wdnrat2r" path="res://art/ui sprites/temporaryUI.png" id="1_neavp"]
 [ext_resource type="FontFile" uid="uid://cq6pxojdhmyhs" path="res://fonts/daydream_3/Daydream DEMO.otf" id="2_1d616"]
 
 [node name="abilityUI" type="Node2D"]
@@ -106,8 +105,3 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Node" type="Node" parent="."]
-
-[node name="TemporaryUi" type="Sprite2D" parent="Node"]
-position = Vector2(95.00002, 656)
-scale = Vector2(0.5802239, 0.5443788)
-texture = ExtResource("1_neavp")
