@@ -22,6 +22,11 @@ func _process(_delta):
 		# if the ability is the frag grenade
 		$ability1/ability1Damage.text = str(Globals.fragGrenadeDamage) + " DMG"
 		$ability1/ability1Cooldown.text = str(round(Globals.fragGrenadeCooldown)) + " CD"
+	elif Globals.ability1 == "Burst attack":
+		# if the ability is the burst attack
+		$ability1/ability1Damage.text = str(Globals.burstDamage) + " DMG"
+		$ability1/ability1Cooldown.text = str(Globals.burstCooldown) + " CD"
+	
 	
 	
 	# ability 2 info
@@ -37,4 +42,9 @@ func _process(_delta):
 		# if the ability is the frag grenade
 		$ability2/ability2Damage.text = str(Globals.fragGrenadeDamage) + " DMG"
 		$ability2/ability2Cooldown.text = str(round(Globals.fragGrenadeCooldown)) + " CD"
+	elif Globals.ability2 == "Burst attack":
+		# if the ability is the burst attack
+		$ability2/ability2Damage.text = str(Globals.burstDamage) + " DMG"
+		$ability2/ability2Cooldown.text = str(round(Globals.burstCooldown)) + " CD"
+	
 	

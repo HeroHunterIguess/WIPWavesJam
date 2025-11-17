@@ -8,9 +8,10 @@ func updateUpgradeText():
 		$ability1Upgrade.text = "Purchase Push Wall MK." + str(Globals.wideAttackLevel + 1) + "\n (" + str(Globals.wideAttackLevel * 35) +" orbs)"
 	if Globals.ability1 == "Frag grenade":
 		$ability1Upgrade.text = "Purchase Frag Grenade MK." + str(Globals.fragGrenadeLevel + 1) + "\n (" + str(Globals.fragGrenadeLevel * 35) +" orbs)"
-		
-		
-		
+	if Globals.ability1 == "Burst attack":
+		$ability1Upgrade.text = "Purchase Burst Attack MK." + str(Globals.burstLevel + 1) + "\n (" + str(Globals.burstLevel * 35) +" orbs)"
+	
+	
 	# text for all abilities at slot 2
 	if Globals.ability2 == "Basic bullet":
 		$ability2Upgrade.text = "Purchase Basic Bullet MK." + str(Globals.basicBulletLevel + 1) + "\n (" + str(Globals.basicBulletLevel * 35) +" orbs)"
@@ -18,13 +19,14 @@ func updateUpgradeText():
 		$ability2Upgrade.text = "Purchase Push Wall MK." + str(Globals.wideAttackLevel + 1) + "\n (" + str(Globals.wideAttackLevel * 35) +" orbs)"
 	if Globals.ability2 == "Frag grenade":
 		$ability2Upgrade.text = "Purchase Frag Grenade MK." + str(Globals.fragGrenadeLevel + 1) + "\n (" + str(Globals.fragGrenadeLevel * 35) +" orbs)"
-	
+	if Globals.ability2 == "Burst attack":
+		$ability2Upgrade.text = "Purchase Burst Attack MK." + str(Globals.burstLevel + 1) + "\n (" + str(Globals.burstLevel * 35) +" orbs)"
 
 
 var rng = RandomNumberGenerator.new()
 func setRandomNewAbility():
 	# the random new ability for you to purchase
-	var rngAbilityNum = rng.randi_range(1,2)
+	var rngAbilityNum = rng.randi_range(1,3)
 	
 	# select it randomly based on a random number and set apropriate variables
 	if rngAbilityNum == 1:
@@ -33,6 +35,9 @@ func setRandomNewAbility():
 	elif rngAbilityNum == 2:
 		currentNewAbility = "Frag grenade"
 		newAbilityCost = Globals.fragGrenadeBaseCost
+	elif rngAbilityNum == 3:
+		currentNewAbility = "Burst attack"
+		newAbilityCost = Globals.burstBaseCost
 	
 	# setup all the text displays
 	
@@ -126,7 +131,12 @@ func upgradeFragGrenade():
 	Globals.fragGrenadeLevel += 1
 	Globals.fragDamage += 0.2
 
-
+func upgradeBurstAttack():
+	Globals.orbs -= Globals.burstLevel * 35
+	Globals.burstAmount += 4
+	Globals.burstDamage += 0.5
+	Globals.burstCooldown -= 40
+	Globals.burstLevel += 1
 
 
 # upgrade to new version of abilities
@@ -167,8 +177,17 @@ func _on_ability_1_upgrade_pressed() -> void:
 			$ability1Upgrade.text = "NOT ENOUGH ORBS"
 			await get_tree().create_timer(0.75).timeout
 			$ability1Upgrade.text = "Purchase Frag Grenade MK." + str(Globals.fragGrenadeLevel + 1) + "\n (" + str(Globals.fragGrenadeLevel * 35) +" orbs)"
-
-
+	
+	if Globals.ability1 == "Burst attack":
+		if Globals.orbs >= Globals.burstLevel * 35:
+			upgradeBurstAttack()
+			$ability1Upgrade.text = "PURCHASED"
+			await get_tree().create_timer(1.0).timeout
+			$ability1Upgrade.text = "Purchase Burst Attack MK." + str(Globals.burstLevel + 1) + "\n (" + str(Globals.burstLevel * 35) +" orbs)"
+		else: 
+			$ability1Upgrade.text = "NOT ENOUGH ORBS"
+			await get_tree().create_timer(0.75).timeout
+			$ability1Upgrade.text = "Purchase Burst Attack MK." + str(Globals.burstLevel + 1) + "\n (" + str(Globals.burstLevel * 35) +" orbs)"
 
 
 
@@ -210,6 +229,18 @@ func _on_ability_2_upgrade_pressed() -> void:
 			$ability2Upgrade.text = "NOT ENOUGH ORBS"
 			await get_tree().create_timer(0.75).timeout
 			$ability2Upgrade.text = "Purchase Frag Grenade MK." + str(Globals.fragGrenadeLevel + 1) + "\n (" + str(Globals.fragGrenadeLevel * 35) +" orbs)"
+	
+	if Globals.ability2 == "Burst attack":
+		if Globals.orbs >= Globals.burstLevel * 35:
+			upgradeBurstAttack()
+			$ability2Upgrade.text = "PURCHASED"
+			await get_tree().create_timer(1.0).timeout
+			$ability2Upgrade.text = "Purchase Burst Attack MK." + str(Globals.burstLevel + 1) + "\n (" + str(Globals.burstLevel * 35) +" orbs)"
+		else: 
+			$ability2Upgrade.text = "NOT ENOUGH ORBS"
+			await get_tree().create_timer(0.75).timeout
+			$ability2Upgrade.text = "Purchase Burst Attack MK." + str(Globals.burstLevel + 1) + "\n (" + str(Globals.burstLevel * 35) +" orbs)"
+
 
 
 
@@ -271,6 +302,9 @@ func _on_reroll_new_abilities_pressed() -> void:
 		Globals.orbs -= Globals.rerollCost
 		Globals.rerollCost *= 2
 		setRandomNewAbility()
+		$rerollNewAbilities.text = "REROLLED"
+		await get_tree().create_timer(0.75).timeout
+		$rerollNewAbilities.text = "Reroll abilities (" + str(Globals.rerollCost) + " orbs)"
 	else: 
 		$rerollNewAbilities.text = "NOT ENOUGH ORBS"
 		await get_tree().create_timer(0.75).timeout

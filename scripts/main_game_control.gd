@@ -8,6 +8,7 @@ const fastEnemyPreload = preload("res://scenes/objects/enemy types/fast_enemy.ts
 const tankEnemyPreload = preload("res://scenes/objects/enemy types/tank_enemy.tscn")
 const wideAttackPreload = preload("res://scenes/objects/wide_attack.tscn")
 const fragGrenadePreload = preload("res://scenes/objects/frag_grenade.tscn")
+const burstAttackPreload = preload("res://scenes/objects/bullet_burst.tscn")
 
 var mousePos
 
@@ -131,6 +132,16 @@ func spawnFragGrenade():
 	var dir = (get_global_mouse_position() - fragGrenade.global_position).normalized()
 	fragGrenade.velocity = dir * fragGrenade.speed
 
+# spawning burst attack
+func spawnBurstAttack():
+	#reset cooldown
+	Globals.burstCooldown = 300
+	
+	#set position
+	var burstAttack = burstAttackPreload.instantiate()
+	add_child(burstAttack)
+	burstAttack.global_position = Vector2(640,688)
+
 
 
 # runs every frame
@@ -140,12 +151,16 @@ func _process(delta):
 	Globals.wideAttackCooldown -= 125 * delta
 	Globals.basicBulletCooldown -= 125 * delta
 	Globals.fragGrenadeCooldown -= 125 * delta
+	Globals.burstCooldown -= 125 * delta
+	
 	if Globals.wideAttackCooldown < 0:
 		Globals.wideAttackCooldown = 0
 	if Globals.basicBulletCooldown < 0:
 		Globals.basicBulletCooldown = 0
 	if Globals.fragGrenadeCooldown < 0:
 		Globals.fragGrenadeCooldown = 0
+	if Globals.burstCooldown < 0:
+		Globals.burstCooldown = 0
 	
 	
 	
@@ -181,7 +196,8 @@ func _process(delta):
 			spawnWideAttack()
 		if Globals.ability1 == "Frag grenade" && Globals.fragGrenadeCooldown <= 0:
 			spawnFragGrenade()
-		
+		if Globals.ability1 == "Burst attack" && Globals.burstCooldown <= 0:
+			spawnBurstAttack()
 		
 		
 		# checking for abilities in slot 2 and spawning those
@@ -193,6 +209,8 @@ func _process(delta):
 			spawnWideAttack()
 		if Globals.ability2 == "Frag grenade" && Globals.fragGrenadeCooldown <= 0:
 			spawnFragGrenade()
+		if Globals.ability2 == "Burst attack" && Globals.burstCooldown <= 0:
+			spawnBurstAttack()
 	
 	
 	
