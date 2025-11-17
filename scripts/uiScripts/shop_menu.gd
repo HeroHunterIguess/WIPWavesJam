@@ -317,3 +317,4 @@ func _on_reroll_new_abilities_pressed() -> void:
 		$rerollNewAbilities.text = "NOT ENOUGH ORBS"
 		await get_tree().create_timer(0.75).timeout
 		$rerollNewAbilities.text = "Reroll abilities (" + str(Globals.rerollCost) + " orbs)"
+ 

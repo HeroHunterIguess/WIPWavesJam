@@ -59,9 +59,10 @@ var burstBaseCost = 30
 # Giant bullet      (not done)
 # empty slot
 
+
 # abilities selected
 var ability1 = "Basic bullet" 
-var ability2 = "Burst attack"
+var ability2 = "empty slot"
 
 
 
