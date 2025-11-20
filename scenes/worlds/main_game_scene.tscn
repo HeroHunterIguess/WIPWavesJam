@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dh0s4wxpw43wx"]
+[gd_scene load_steps=23 format=3 uid="uid://dh0s4wxpw43wx"]
 
 [ext_resource type="Script" uid="uid://daoncqqhk3f5g" path="res://scripts/main_game_control.gd" id="1_ltt4m"]
 [ext_resource type="Shader" uid="uid://b1xuob6aqtiku" path="res://shaders/main_background.gdshader" id="2_dq5l5"]
@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://cq6pxojdhmyhs" path="res://fonts/daydream_3/Daydream DEMO.otf" id="5_seagn"]
 [ext_resource type="PackedScene" uid="uid://bbwd7k4w1smjy" path="res://scenes/ui/ability_ui.tscn" id="8_seagn"]
 [ext_resource type="AudioStream" uid="uid://083dyvnfmb62" path="res://audio/songs/maintheme(temp).mp3" id="9_c7761"]
+[ext_resource type="Texture2D" uid="uid://cfqc8p7vgikvy" path="res://art/ui sprites/newshopui.png" id="10_camfd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_faocy"]
 shader = ExtResource("2_dq5l5")
@@ -83,6 +84,28 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jumef"]
+atlas = ExtResource("10_camfd")
+region = Rect2(0, 0, 256, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7wkj"]
+atlas = ExtResource("10_camfd")
+region = Rect2(256, 0, 256, 188)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wo2sw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jumef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7wkj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="MainGameScene" type="Node2D"]
 script = ExtResource("1_ltt4m")
 
@@ -122,9 +145,9 @@ shape = SubResource("CircleShape2D_ltt4m")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_xxp0d")
-offset_left = -216.0
+offset_left = -208.0
 offset_top = -152.0
-offset_right = 1288.0
+offset_right = 1296.0
 offset_bottom = 832.0
 color = Color(0, 0, 0, 0.30588236)
 metadata/_edit_use_anchors_ = true
@@ -166,7 +189,7 @@ offset_top = -0.08000183
 offset_right = -0.32002258
 offset_bottom = -0.16001892
 theme_override_fonts/font = ExtResource("5_seagn")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 27
 text = "Orbs: "
 metadata/_edit_use_anchors_ = true
 
@@ -201,6 +224,13 @@ position = Vector2(640, 288)
 stream = ExtResource("9_c7761")
 volume_db = -19.158
 autoplay = true
+
+[node name="ability menu sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(168, 712.00006)
+scale = Vector2(1.84375, 1.7340425)
+sprite_frames = SubResource("SpriteFrames_wo2sw")
+autoplay = "default"
+frame_progress = 0.71984476
 
 [connection signal="area_entered" from="playerHitbox" to="." method="_on_player_hitbox_area_entered"]
 [connection signal="timeout" from="SpawningTimer" to="." method="_on_spawntimer_timeout"]

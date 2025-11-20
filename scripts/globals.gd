@@ -2,7 +2,7 @@ extends Node
 
 
 # random things
-var orbs = 999999999999990
+var orbs = 9999
 var overallScore = 0
 var currentWave = 1
 var rerollCost = 5
