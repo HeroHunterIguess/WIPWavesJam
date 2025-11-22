@@ -13,19 +13,19 @@ func _process(_delta):
 	if Globals.ability1 == "Basic bullet":
 		# if the ability is basic bullet
 		$ability1/ability1Damage.text = str(Globals.basicBulletDamage) + " DMG"
-		$ability1/ability1Cooldown.text = str(round(Globals.basicBulletCooldown)) + " CD"
+		$ability1/ability1Cooldown.text = str(round(Globals.basicBulletCooldown)) + " COOLDOWN"
 	elif Globals.ability1 == "Push wall":
 		# if the ability is push wall/wide attack
 		$ability1/ability1Damage.text = str(Globals.wideAttackDamage) + " DMG"
-		$ability1/ability1Cooldown.text = str(round(Globals.wideAttackCooldown)) + " CD"
+		$ability1/ability1Cooldown.text = str(round(Globals.wideAttackCooldown)) + " COOLDOWN"
 	elif Globals.ability1 == "Frag grenade":
 		# if the ability is the frag grenade
 		$ability1/ability1Damage.text = str(Globals.fragGrenadeDamage) + " DMG"
-		$ability1/ability1Cooldown.text = str(round(Globals.fragGrenadeCooldown)) + " CD"
+		$ability1/ability1Cooldown.text = str(round(Globals.fragGrenadeCooldown)) + " COOLDOWN"
 	elif Globals.ability1 == "Burst attack":
 		# if the ability is the burst attack
 		$ability1/ability1Damage.text = str(Globals.burstDamage) + " DMG"
-		$ability1/ability1Cooldown.text = str(round(Globals.burstCooldown)) + " CD"
+		$ability1/ability1Cooldown.text = str(round(Globals.burstCooldown)) + " COOLDOWN"
 	
 	
 	
@@ -33,18 +33,18 @@ func _process(_delta):
 	if Globals.ability2 == "Basic bullet":
 		# if the ability is basic bullet
 		$ability2/ability2Damage.text = str(Globals.basicBulletDamage) + " DMG"
-		$ability2/ability2Cooldown.text = str(int(round(Globals.basicBulletCooldown))) + " CD"
+		$ability2/ability2Cooldown.text = str(int(round(Globals.basicBulletCooldown))) + " COOLDOWN"
 	elif Globals.ability2 == "Push wall":
 		# if the ability is push wall/wide attack
 		$ability2/ability2Damage.text = str(Globals.wideAttackDamage) + " DMG"
-		$ability2/ability2Cooldown.text = str(int(round(Globals.wideAttackCooldown))) + " CD"
+		$ability2/ability2Cooldown.text = str(int(round(Globals.wideAttackCooldown))) + " COOLDOWN"
 	elif Globals.ability2 == "Frag grenade":
 		# if the ability is the frag grenade
 		$ability2/ability2Damage.text = str(Globals.fragGrenadeDamage) + " DMG"
-		$ability2/ability2Cooldown.text = str(round(Globals.fragGrenadeCooldown)) + " CD"
+		$ability2/ability2Cooldown.text = str(round(Globals.fragGrenadeCooldown)) + " COOLDOWN"
 	elif Globals.ability2 == "Burst attack":
 		# if the ability is the burst attack
 		$ability2/ability2Damage.text = str(Globals.burstDamage) + " DMG"
-		$ability2/ability2Cooldown.text = str(round(Globals.burstCooldown)) + " CD"
+		$ability2/ability2Cooldown.text = str(round(Globals.burstCooldown)) + " COOLDOWN"
 	
 	

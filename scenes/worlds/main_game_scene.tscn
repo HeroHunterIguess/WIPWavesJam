@@ -226,7 +226,7 @@ volume_db = -19.158
 autoplay = true
 
 [node name="ability menu sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(168, 712.00006)
+position = Vector2(168, 720.00006)
 scale = Vector2(1.84375, 1.7340425)
 sprite_frames = SubResource("SpriteFrames_wo2sw")
 autoplay = "default"

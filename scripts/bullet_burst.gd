@@ -21,7 +21,7 @@ func spawnFrags(amount):
 		fragGrenade.damage = Globals.burstDamage
 	
 		# random direction
-		var dir = Vector2(rng.randi_range(-1000, 1000), rng.randi_range(0, -600)).normalized()
+		var dir = Vector2(rng.randi_range(-400, 200), rng.randi_range(0, -600)).normalized()
 		fragGrenade.velocity = dir * 550
 	
 	queue_free()
